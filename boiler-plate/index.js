@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const { User } =  require('./models/User');
 const config = require('./config/key');
 const cookieParser = require('cookie-parser');
-
+const { auth } = require('./middleware/auth');
 
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     res.send('hello world~~!');
 });
 
-// app.post('/register', (req, res) => {
+// app.post('/api/user/register', (req, res) => {
 //     const user = new User(req.body);
 //     user.save((err) => {
 //         if(err){
@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 //         })
 //     })
 // });
-app.post('/register', async (req, res) => {
+app.post('/api/user/register', async (req, res) => {
     try {
         const user = await new User(req.body);
         await user.save()
@@ -55,7 +55,7 @@ app.post('/register', async (req, res) => {
         })    
     }
 });
-app.post('/login', (req, res) => {
+app.post('/api/user/login', (req, res) => {
     User.findOne({
         email : req.body.email
     }, (err, user) => {
@@ -76,6 +76,7 @@ app.post('/login', (req, res) => {
                 if(err){
                     return res.status(400).send(err);
                 }
+                //쿠키의 이름이 x_auth
                 res.cookie('x_auth', user.token).status(200).json({
                     loginSuccess : true,
                     userId: user._id,
@@ -84,6 +85,35 @@ app.post('/login', (req, res) => {
         });
     });
 });
+
+//role 0 -> 일반유저 role 0이 아니면 관리자
+app.get('/api/user/auth', auth, (req, res) => {
+    res.status(200).json({
+        _id : req.user._id,
+        isAdmin : req.user.role === 0 ? false : true,
+        isAuth : true,
+        email : req.user.email,
+        name : req.user.name,
+        role : req.user.role
+    })
+});
+app.get('/api/user/logout', auth, (req, res)=>{
+    User.findOneAndUpdate(
+        { _id : req.user._id},
+        {token : ""},
+        (err, user)=>{
+        if(err){
+            return res.json({
+                success : false,
+                err,
+            });
+        }
+        return res.status(200).json({
+            success : true,
+        });
+    })
+});
+
 app.listen(port, () => {
     console.log(`${port}포트 서버가 실행중입니다.`)
 })
