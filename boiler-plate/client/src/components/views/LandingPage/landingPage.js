@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router';
 
 // port가 다른 두 서버는 아무설정없이 Request를 보낼수 없다.
 // 보안을 위해서!!
@@ -17,6 +18,8 @@ function LandingPage(props) {
         axios.get('/api/user/logout')
         .then(res => {
             if(res.data.success){
+                //history는 react-router-dom 을 이용해 사용하기때문에
+                //export 할때 withRouter로 감싸줘야한다.
                 props.history.push('/login');
             }else{
                 alert('로그아웃 실패!');
@@ -36,4 +39,4 @@ function LandingPage(props) {
     )
 }
 
-export default LandingPage
+export default withRouter(LandingPage)
