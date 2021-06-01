@@ -3,7 +3,7 @@ import { FaCode } from "react-icons/fa";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from '../../Config';
 import MainImage from  './Section/mainImage';
 import GridCards from '../commons/gridCard';
-import { Row } from 'antd';
+import { Row, Button } from 'antd';
 function LandingPage() {
     const [movies, setMovies] = useState([]);
     const [mainMovieImage, setMainMovieImage] = useState(null);
@@ -55,7 +55,7 @@ function LandingPage() {
                 </Row>
             </div>
             <div style={{display:'flex', justifyContent: 'center'}}>
-                <button onClick={loadMoreMovie}>더보기</button>
+                <Button onClick={loadMoreMovie}>더보기</Button>
             </div> 
         </div>
     )

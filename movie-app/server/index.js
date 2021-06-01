@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cors = require('cors')
-
-const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const config = require("./config/key");
@@ -15,7 +13,7 @@ const config = require("./config/key");
 //   .catch(err => console.error(err));
 
 const mongoose = require("mongoose");
-const connect = mongoose.connect(config.mongoURI,
+mongoose.connect(config.mongoURI,
   {
     useNewUrlParser: true, useUnifiedTopology: true,
     useCreateIndex: true, useFindAndModify: false
@@ -27,13 +25,14 @@ app.use(cors())
 
 //to not get any deprecation warning or error
 //support parsing of application/x-www-form-urlencoded post data
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 //to get json data
 // support parsing of application/json type post data
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cookieParser());
 
 app.use('/api/users', require('./routes/users'));
+app.use('/api/favorite', require('./routes/favorite'));
 
 
 //use this to show the image you have in node js server to client (react js)

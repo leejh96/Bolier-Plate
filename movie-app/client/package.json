@@ -7,6 +7,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "formik": "^2.2.8",
+    "http-proxy-middleware": "^2.0.0",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.6",
@@ -42,7 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.6.2",
-    "http-proxy-middleware": "^1.0.3"
-  }
+    "@ant-design/icons": "^4.6.2"
+  },
+  "proxy" : "http://localhost:5000"
 }

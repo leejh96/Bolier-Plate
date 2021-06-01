@@ -48,10 +48,10 @@
   "resolved" "https://registry.npmjs.org/@ctrl/tinycolor/-/tinycolor-3.4.0.tgz"
   "version" "3.4.0"
 
-"@types/http-proxy@^1.17.3":
-  "integrity" "sha512-IrSHl2u6AWXduUaDLqYpt45tLVCtYv7o4Z0s1KghBCDgIIS9oW5K1H8mZG/A2CfeLdEa7rTd1ACOiHBc1EMT2Q=="
-  "resolved" "https://registry.npmjs.org/@types/http-proxy/-/http-proxy-1.17.4.tgz"
-  "version" "1.17.4"
+"@types/http-proxy@^1.17.5":
+  "integrity" "sha512-+qsjqR75S/ib0ig0R9WN+CDoZeOBU6F2XLewgC4KVgdXiNHiKKHFEMRHOrs5PbYE97D5vataw5wPj4KLYfUkuQ=="
+  "resolved" "https://registry.npmjs.org/@types/http-proxy/-/http-proxy-1.17.6.tgz"
+  "version" "1.17.6"
   dependencies:
     "@types/node" "*"
 
@@ -61,9 +61,9 @@
   "version" "4.14.170"
 
 "@types/node@*":
-  "integrity" "sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-13.11.0.tgz"
-  "version" "13.11.0"
+  "integrity" "sha512-7EIraBEyRHEe7CH+Fm1XvgqU6uwZN8Q7jppJGcqjROMT29qhAuuOxYB1uEY5UMYQKEmA5D+5tBnhdaPXSsLONA=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-15.6.1.tgz"
+  "version" "15.6.1"
 
 "abab@^1.0.3":
   "integrity" "sha1-X6rZwsB/YN12dw9xzwJbYqY8/U4="
@@ -4032,15 +4032,15 @@
   "resolved" "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.3.tgz"
   "version" "0.5.3"
 
-"http-proxy-middleware@^1.0.3":
-  "integrity" "sha512-GHvPeBD+A357zS5tHjzj6ISrVOjjCiy0I92bdyTJz0pNmIjFxO0NX/bX+xkGgnclKQE/5hHAB9JEQ7u9Pw4olg=="
-  "resolved" "https://registry.npmjs.org/http-proxy-middleware/-/http-proxy-middleware-1.0.3.tgz"
-  "version" "1.0.3"
+"http-proxy-middleware@^2.0.0":
+  "integrity" "sha512-S+RN5njuyvYV760aiVKnyuTXqUMcSIvYOsHA891DOVQyrdZOwaXtBHpt9FUVPEDAsOvsPArZp6VXQLs44yvkow=="
+  "resolved" "https://registry.npmjs.org/http-proxy-middleware/-/http-proxy-middleware-2.0.0.tgz"
+  "version" "2.0.0"
   dependencies:
-    "@types/http-proxy" "^1.17.3"
-    "http-proxy" "^1.18.0"
+    "@types/http-proxy" "^1.17.5"
+    "http-proxy" "^1.18.1"
     "is-glob" "^4.0.1"
-    "lodash" "^4.17.15"
+    "is-plain-obj" "^3.0.0"
     "micromatch" "^4.0.2"
 
 "http-proxy-middleware@~0.17.4":
@@ -4053,7 +4053,7 @@
     "lodash" "^4.17.2"
     "micromatch" "^2.3.11"
 
-"http-proxy@^1.16.2", "http-proxy@^1.18.0":
+"http-proxy@^1.16.2", "http-proxy@^1.18.1":
   "integrity" "sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ=="
   "resolved" "https://registry.npmjs.org/http-proxy/-/http-proxy-1.18.1.tgz"
   "version" "1.18.1"
@@ -4501,6 +4501,11 @@
   "integrity" "sha1-caUMhCnfync8kqOQpKA7OfzVHT4="
   "resolved" "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-1.1.0.tgz"
   "version" "1.1.0"
+
+"is-plain-obj@^3.0.0":
+  "integrity" "sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA=="
+  "resolved" "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-3.0.0.tgz"
+  "version" "3.0.0"
 
 "is-plain-object@^2.0.3", "is-plain-object@^2.0.4":
   "integrity" "sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og=="
@@ -5481,12 +5486,12 @@
     "to-regex" "^3.0.2"
 
 "micromatch@^4.0.2":
-  "integrity" "sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q=="
-  "resolved" "https://registry.npmjs.org/micromatch/-/micromatch-4.0.2.tgz"
-  "version" "4.0.2"
+  "integrity" "sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg=="
+  "resolved" "https://registry.npmjs.org/micromatch/-/micromatch-4.0.4.tgz"
+  "version" "4.0.4"
   dependencies:
     "braces" "^3.0.1"
-    "picomatch" "^2.0.5"
+    "picomatch" "^2.2.3"
 
 "miller-rabin@^4.0.0":
   "integrity" "sha512-115fLhvZVqWwHPbClyntxEVfVDfl9DLLTuJvq3g2O/Oxi8AiNouAHvDSzHS0viUJc+V5vm3eq91Xwqn9dp4jRA=="
@@ -6121,10 +6126,10 @@
   "resolved" "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz"
   "version" "2.1.0"
 
-"picomatch@^2.0.4", "picomatch@^2.0.5", "picomatch@^2.2.1":
-  "integrity" "sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg=="
-  "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-2.2.2.tgz"
-  "version" "2.2.2"
+"picomatch@^2.0.4", "picomatch@^2.2.1", "picomatch@^2.2.3":
+  "integrity" "sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw=="
+  "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-2.3.0.tgz"
+  "version" "2.3.0"
 
 "pify@^2.0.0", "pify@^2.3.0":
   "integrity" "sha1-7RQaasBDqEnqWISY59yosVMw6Qw="

@@ -3,7 +3,8 @@ import {API_URL, API_KEY, IMAGE_BASE_URL} from '../../Config';
 import MainImage from '../LandingPage/Section/mainImage';
 import MovieInfo from './Section/movieInfo';
 import GridCards from '../commons/gridCard';
-import { Row } from 'antd';
+import Favorite from  '../MovieDetail/Section/favorite';
+import { Row, Button } from 'antd';
 function movieDetail(props) {
     let movieId = props.match.params.movieId;
     const [movie, setMovie] = useState([]);
@@ -40,6 +41,7 @@ function movieDetail(props) {
 
             {/* 바디 */}
             <div style={{width : '85%', margin: '1rem auto'}}>
+                <Favorite movieInfo={movie} movieId={movieId} userFrom={localStorage.getItem('userId')}/>
                 {/* 영화 정보 */}
                 <MovieInfo 
                     movie={movie}
@@ -47,7 +49,7 @@ function movieDetail(props) {
                 <br />
                 {/* 배우 정보 */}
                 <div style ={{display : 'flex', justifyContent: 'center', margin: '2rem'}}>
-                    <button onClick={toggleActorView}>배우</button>
+                    <Button onClick={toggleActorView}>배우</Button>
                 </div>
                 {actorToggle &&
                 <Row gutter={[16, 16]}>

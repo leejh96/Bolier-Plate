@@ -9,9 +9,9 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "backend": "nodemon server/index.js",
+    "backend": "nodemon ./server/index.js",
     "frontend": "npm run start --prefix client",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "author": "Lee",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^5.12.11",
+    "react-scripts": "^4.0.3",
     "saslprep": "^1.0.3",
     "supports-color": "^7.1.0"
   },
